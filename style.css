@@ -9,8 +9,7 @@ h2 {
 } 
 
 h4 {
-    color: rgb(70, 67, 67);
-    
+    color: rgb(70, 67, 67);  
 }
 
 h5 {
@@ -64,4 +63,10 @@ h5 {
     background-color: white;
     margin: 15px 0px 0px 15px;
     padding-left: 100px;
+}
+
+.icon {
+    /* size */
+    /* alignment */
+
 }
