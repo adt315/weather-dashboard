@@ -5,13 +5,18 @@
 
 h2 {
     color: white;
-    text-align: center;
+    padding-left: 450px;
 } 
 
 h4 {
     color: rgb(70, 67, 67);
+    
 }
 
+h5 {
+    padding-top: 20px;
+    text-align: center;
+}
 
 .card-header {
     background-color: rgb(70, 67, 67);
@@ -22,7 +27,7 @@ h4 {
 .main-card {
     background-color: rgb(203, 227, 235);
     color: rgb(70, 67, 67);
-    padding-bottom: 45px;
+    height: 600px;
 }
 
 .weather-card {
@@ -30,6 +35,7 @@ h4 {
     color: white;
     text-align: center;
     margin-bottom: 15px;
+    width: 115px;
 }
 
 .search-btn {
@@ -51,9 +57,11 @@ h4 {
 .today-card {
     background-color: white;
     margin: 15px 0px 0px 15px;
+    padding-left: 300px;
 }
 
 .forecast-card {
     background-color: white;
     margin: 15px 0px 0px 15px;
+    padding-left: 100px;
 }

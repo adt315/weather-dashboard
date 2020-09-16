@@ -1,8 +1,6 @@
 ## Weather Dashboard
 
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS. ; GIVEN a weather dashboard with form inputs
-
-Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that will provide basic setup and usage instructions. Use `localStorage` to store any persistent data.
+The goal of this project was to build a weather dashboard that This app runs in the browser and features dynamically updated HTML and CSS..  The OpenWeather API (https://openweathermap.org/api) was used to retrieve weather data for cities. The documentation includes a section called "How to start" that will provide basic setup and usage instructions. Use `localStorage` to store any persistent data.
 
 ### How It Works:
 
