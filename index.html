@@ -25,17 +25,28 @@
 
         <div class="search-card">
                 <h5>Search for a City:</h5>
-                <div> 
+                <div class="form-inline md-form mb-4">
+                    <input id="city-search" class="form-control mr-sm-2" type="text" placeholder="Enter City Name" aria-label="Search">
+                    <button id="search-btn" class="btn btn-primary " type="submit"><i class='fas fa-search'></i></button>
+                </div>
+                <section>
+                    <div id="search-results" class="btn-group-vertical container-fluid ">
+                    </div>
+                </section>
+
+        </div>
+
+                <!-- <div> 
                     <input id="city-search" class="form-control" type="text" placeholder="Enter City Name">
                     <button id="search-btn" class="btn search-btn btn btn-primary">
                         <i class="fa fa-search"></i>
-                    </button>
+                    </button> -->
                         <!-- <i id="search-btn" class="search-btn btn btn-primary fa fa-search"></i> -->
                         <!-- <form class="" action="submit">
                             <input type="text">
                             <i class="search-btn btn btn-primary fa fa-search"></i>
                         </form> -->
-                </div>
+                
 
                 <div class="cities-card">
                     <!-- <ul class="list-group list-group-flush">
@@ -54,14 +65,9 @@
 
 
             <div class="days-card">
-                <div id="today-forecast" class="today-card">
-                    <h4 class="card-title">City - Date</h4>
-                    <p class="icon"><i class="fa fa-cloud"></i></p>
-                    <p class="temp">Temperature: </p>
-                    <p class="humidity">Humidity: </p>
-                    <p class="wind-speed">Wind Speed: </p>
-                    <p class="uv-index">UV Index: </p>
-                </div>
+                
+                <div id="current-weather" class="today-card">
+                  
                 <div class="forecast-card">
                     <h4>5-Day Forecast:</h4>
                     <div class="row">

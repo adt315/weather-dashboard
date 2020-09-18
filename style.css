@@ -5,11 +5,12 @@
 
 h2 {
     color: white;
-    padding-left: 450px;
+    /* padding-left: 450px; */
 } 
 
 h4 {
-    color: rgb(70, 67, 67);  
+    color: rgb(70, 67, 67); 
+    /* padding-top: 10px;  */
 }
 
 h5 {
@@ -37,7 +38,11 @@ h5 {
     width: 115px;
 }
 
-.search-btn {
+#city-search {
+    margin-left: 10px;
+}
+
+#search-btn {
     background-color: rgb(58, 159, 223);
 }
 
@@ -56,17 +61,10 @@ h5 {
 .today-card {
     background-color: white;
     margin: 15px 0px 0px 15px;
-    padding-left: 300px;
 }
 
 .forecast-card {
     background-color: white;
     margin: 15px 0px 0px 15px;
-    padding-left: 100px;
-}
-
-.icon {
-    /* size */
-    /* alignment */
-
+    padding-left: 100px; 
 }
