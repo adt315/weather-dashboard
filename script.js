@@ -3,7 +3,7 @@ $(document).ready(function () {
     $("#search-btn").on("click", function () {
         var searchValue = $("#city-search").val();
         $("#city-search").val(""); //clear search field
-        function storeCities(){
+        function storeCities() {
             myCities = [];
             myCities.push(searchValue);
             localStorage.setItem(myCities, JSON.stringify(myCities));
@@ -16,18 +16,18 @@ $(document).ready(function () {
     });
 
 
-        function getMyCities() {
-            for (i = 0; i < localStorage.length; i++) {
+    function getMyCities() {
+        for (i = 0; i < localStorage.length; i++) {
             myCities = JSON.parse(localStorage.getItem(localStorage.key(i)));
 
-          console.log(myCities);
-                  $(".list-group-item").text(myCities[i]);  
-    // //         var li = document.createElement("li");
-    // //         li.textContent = Object.values(myCities);
+            console.log(myCities);
+            $(".list-group-item").text(myCities[i]);
+            // //         var li = document.createElement("li");
+            // //         li.textContent = Object.values(myCities);
 
-                 }
-     }
-    
+        }
+    }
+
 
 
 
@@ -58,12 +58,12 @@ $(document).ready(function () {
         })
     }
 
-    
+
 
     // var lat = data.coord.lat; 
     // var lon = data.coord.lon;
-    
-    
+
+
     // function getUV() {  
     //     $.ajax({
     //         type: "GET",
@@ -81,6 +81,7 @@ $(document).ready(function () {
     //     getUV();
 
 
+
     function getForecast(searchValue) {  //this searchValue is a placeholder
         $.ajax({
             type: "GET",
@@ -88,28 +89,39 @@ $(document).ready(function () {
             success: function (data) {
                 console.log(data);
                 $(".card-title-1").text(data.list[7].dt_txt); //splice
-                // var icon = $(".icon-1").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
-                $(".icon-1").text("icon");
+                var icon1 = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + data.list[7].weather[0].icon + ".png");
+                // 
+                var cardTitle1 = $(".card-title-1")
+                cardTitle1.append(icon1);
                 $(".temp-1").text("Temp: " + data.list[0].main.temp + "°F");
                 $(".humidity-1").text("Humidity: " + data.list[0].main.humidity + "%");
 
                 $(".card-title-2").text(data.list[15].dt_txt);
+                var icon2 = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + data.list[15].weather[0].icon + ".png");
+                var cardTitle2 = $(".card-title-2")
+                cardTitle2.append(icon2);
                 $(".icon-2").text("icon");
                 $(".temp-2").text("Temp: " + data.list[1].main.temp + "°F");
                 $(".humidity-2").text("Humidity: " + data.list[1].main.humidity + "%");
 
                 $(".card-title-3").text(data.list[23].dt_txt);
-                $(".icon-3").text("icon");
+                var icon3 = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + data.list[23].weather[0].icon + ".png");
+                var cardTitle3 = $(".card-title-3")
+                cardTitle3.append(icon3);
                 $(".temp-3").text("Temp: " + data.list[2].main.temp + "°F");
                 $(".humidity-3").text("Humidity: " + data.list[2].main.humidity + "%");
 
                 $(".card-title-4").text(data.list[31].dt_txt);
-                $(".icon-4").text("icon");
+                var icon4 = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + data.list[31].weather[0].icon + ".png");
+                var cardTitle4 = $(".card-title-4")
+                cardTitle4.append(icon4);
                 $(".temp-4").text("Temp: " + data.list[3].main.temp + "°F");
                 $(".humidity-4").text("Humidity: " + data.list[3].main.humidity + "%");
 
                 $(".card-title-5").text(data.list[39].dt_txt);
-                $(".icon-5").text("icon");
+                var icon5 = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + data.list[39].weather[0].icon + ".png");
+                var cardTitle5 = $(".card-title-5")
+                cardTitle5.append(icon5);
                 $(".temp-5").text("Temp: " + data.list[4].main.temp + "°F");
                 $(".humidity-5").text("Humidity: " + data.list[4].main.humidity + "%");
             }
