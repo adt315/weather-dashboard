@@ -1,25 +1,4 @@
-// My API Key:
-// a468ca0d8bd9b0455127f58ae98ac8b8
-
-
-// coord.lat (latitude)
-// coord.lon (longitude)
-
-// For 5 DAY FORECAST:
-
-
-// for UV:
-//         Server response format
-//         lat --> float - latitude for returned data 
-//         lon --> float - longitude for returned data 
-//         date_iso --> string - date and time corresponding to returned date 
-//         date --> integer - ISO 8601 timestamp 
-//         value --> float - ultraviolet index
-
-
 $(document).ready(function () {
-
-
 
     $("#search-btn").on("click", function () {
         var searchValue = $("#city-search").val();
@@ -79,10 +58,27 @@ $(document).ready(function () {
         })
     }
 
-    // url:"https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey
-    // ^may need an & before lat
+    
 
-    // <p class="uv-index">UV Index: </p>
+    // var lat = data.coord.lat; 
+    // var lon = data.coord.lon;
+    
+    
+    // function getUV() {  
+    //     $.ajax({
+    //         type: "GET",
+    //         url:"https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=a468ca0d8bd9b0455127f58ae98ac8b8",
+    //         // success: function(results) {
+    //         //     console.log(uvIndex);
+    //     })
+    // }
+    // getUV();
+
+    // // <p class="uv-index">UV Index: </p>
+
+    //     })
+    // }
+    //     getUV();
 
 
     function getForecast(searchValue) {  //this searchValue is a placeholder
@@ -119,6 +115,4 @@ $(document).ready(function () {
             }
         })
     }
-
-
 });
