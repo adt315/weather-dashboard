@@ -1,28 +1,20 @@
-
 // My API Key:
 // a468ca0d8bd9b0455127f58ae98ac8b8
 
-// API calls:
 
-// Params I need:
-// theirs = the 1st one
-// For CURRENT weather:
-// name (city name)
-//   (date)
-// main.temp  (temp)
-// main.humidity  (humidity)
-// wind.speed  (wind speed)
-//   (uv index)
 // coord.lat (latitude)
 // coord.lon (longitude)
-// weather (more info Weather condition codes)
-// weather.id	(Weather condition id)
-// weather.main (Group of weather parameters) (Rain, Snow, Extreme etc.)
-// weather.description	(Weather condition within the group)	
-// weather.icon (Weather icon id)
 
 // For 5 DAY FORECAST:
 // sys.dt_txt	(Data/time)
+
+   // for UV:
+    //         Server response format
+    //         lat --> float - latitude for returned data 
+    //         lon --> float - longitude for returned data 
+    //         date_iso --> string - date and time corresponding to returned date 
+    //         date --> integer - ISO 8601 timestamp 
+    //         value --> float - ultraviolet index
 
 
 $(document).ready(function () {
@@ -31,13 +23,13 @@ $(document).ready(function () {
         var searchValue = $("#city-search").val();
         $("#city-search").val(""); //clear search field
         weatherSearch(searchValue); //passes an actual variable searchValue
+        getForecast(searchValue);
     });
 
     function weatherSearch(searchValue) {  //this searchValue is a placeholder
         $.ajax({
             type: "GET",
             url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=a468ca0d8bd9b0455127f58ae98ac8b8&units=imperial",
-            dataType: "JSON",
             success: function (data) {
                 console.log(data);
 
@@ -49,10 +41,11 @@ $(document).ready(function () {
                 var temp = $("<p>").addClass("temp").text("Temperature: " + data.main.temp + " °F");
                 var humidity = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + "%");
                 var windSpeed = $("<p>").addClass("wind-speed").text("Wind Speed: " + data.wind.speed + " MPH");
+                var uvIndex = $("<p>").addClass("uv-index").text("UV Index: ");
                 var cardBody = $("<div>").addClass("card-body");
 
                 cardTitle.append(icon);
-                cardBody.append(cardTitle, temp, humidity, windSpeed);
+                cardBody.append(cardTitle, temp, humidity, windSpeed, uvIndex);
                 card.append(cardBody);
                 $("#current-weather").append(card);
             }
@@ -64,40 +57,40 @@ $(document).ready(function () {
 
     // <p class="uv-index">UV Index: </p>
 
-    // for UV:
-    //         Server response format
-    //         lat --> float - latitude for returned data 
-    //         lon --> float - longitude for returned data 
-    //         date_iso --> string - date and time corresponding to returned date 
-    //         date --> integer - ISO 8601 timestamp 
-    //         value --> float - ultraviolet index
 
+    function getForecast(searchValue) {  //this searchValue is a placeholder
+        $.ajax({
+            type: "GET",
+            url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=a468ca0d8bd9b0455127f58ae98ac8b8&units=imperial",
+            success: function (data) {
+                console.log(data);
+                $(".card-title-1").text("1 ");
+                $(".icon-1").text("2 ");
+                $(".temp-1").text("Temp: ");
+                $(".humidity-1").text("Humidity: ");
 
-    // url:"https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial&appid=" + apiKey 
+                $(".card-title-2").text("1 ");
+                $(".icon-2").text("2 ");
+                $(".temp-2").text("Temp: ");
+                $(".humidity-2").text("Humidity: ");
 
+                $(".card-title-3").text("1 ");
+                $(".icon-3").text("2 ");
+                $(".temp-3").text("Temp: ");
+                $(".humidity-3").text("Humidity: ");
 
+                $(".card-title-4").text("1 ");
+                $(".icon-4").text("2 ");
+                $(".temp-4").text("Temp: ");
+                $(".humidity-4").text("Humidity: ");
 
-
-    // WHEN I search for a city I am presented with current and future conditions for that city and that city is added to the search history
-
-
-    //    UV index
-
-
-
-    // WHEN I view the UV index I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-
-
-
-    // I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
-
-
-
-    // WHEN I click on a city in the search history I am again presented with current and future conditions for that city
-
-
-
-    // WHEN I open the weather dashboard I am presented with the last searched city forecast
-
+                $(".card-title-5").text("1 ");
+                $(".icon-5").text("2 ");
+                $(".temp-5").text("Temp: ");
+                $(".humidity-5").text("Humidity: ");
+            }
+        })
+    }    
+       
 
 });

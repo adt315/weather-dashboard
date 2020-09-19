@@ -63,8 +63,16 @@ h5 {
     margin: 15px 0px 0px 15px;
 }
 
-.forecast-card {
+#forecast-card {
     background-color: white;
     margin: 15px 0px 0px 15px;
     padding-left: 100px; 
 }
+
+/* .uv-index {
+
+} */
+
+/* #cities-card {
+
+} */
