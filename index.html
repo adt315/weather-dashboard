@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <section class="container main-card">
+        <div class="row card-header">
+            <h2>Weather Dashboard</h2>
+        </div>
+
+        <div class="search-card">
+            <h5>Search for a City:</h5>
+            <div class="form-inline md-form mb-4">
+                <input id="city-search" class="form-control mr-sm-2" type="text" placeholder="Enter City Name"
+                    aria-label="Search">
+                <button id="search-btn" class="btn btn-primary " type="submit"><i class='fas fa-search'></i></button>
+            </div>
+            <hr>
+            <section>
+                <div id="search-results" class="btn-group-vertical container-fluid ">
+                    <div id="cities-card">
+                        <ul id="cities-list" class="list-group list-group-flush"></ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        
+        <div class="days-card">
+
+            <div id="current-weather" class="today-card">
+            </div>   
+
+            <div id="forecast-card">
+                    <h4>5-Day Forecast:</h4>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="weather-card">
+                                <div class="card-body-1">
+                                    <h5 class="card-title-1"></h5>
+                                    <p class="temp-1"></p>
+                                    <p class="humidity-1"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="weather-card">
+                                <div class="card-body-2">
+                                    <h5 class="card-title-2"></h5>
+                                    <p class="temp-2"></p>
+                                    <p class="humidity-2"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="weather-card">
+                                <div class="card-body-3">
+                                    <h5 class="card-title-3"></h5>
+                                    <p class="temp-3"></p>
+                                    <p class="humidity-3"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="weather-card">
+                                <div class="card-body-4">
+                                    <h5 class="card-title-4"></h5>
+                                    <p class="temp-4"></p>
+                                    <p class="humidity-4"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="weather-card">
+                                <div class="card-body-5">
+                                    <h5 class="card-title-5"></h5>
+                                    <p class="temp-5"></p>
+                                    <p class="humidity-5"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            
+        </div>   
+
+    </section>
+
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
