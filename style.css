@@ -27,7 +27,7 @@ h5 {
 .main-card {
     background-color: rgb(203, 227, 235);
     color: rgb(70, 67, 67);
-    height: 600px;
+    height: 1000px;
 }
 
 .weather-card {
@@ -69,10 +69,14 @@ h5 {
     padding-left: 100px; 
 }
 
-/* .uv-index {
+.favorable {
+    background-color: green;
+}
 
-} */
+.moderate {
+    background-color: yellow;
+}
 
-/* #cities-card {
-
-} */
+.severe {
+    background-color: red;
+}
