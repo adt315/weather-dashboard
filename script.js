@@ -1,3 +1,7 @@
+
+var lat;
+var lon;
+
 $(document).ready(function () {
 
     $("#search-btn").on("click", function () {
@@ -19,17 +23,10 @@ $(document).ready(function () {
     function getMyCities() {
         for (i = 0; i < localStorage.length; i++) {
             myCities = JSON.parse(localStorage.getItem(localStorage.key(i)));
-
             console.log(myCities);
             $(".list-group-item").text(myCities[i]);
-            // //         var li = document.createElement("li");
-            // //         li.textContent = Object.values(myCities);
-
         }
     }
-
-
-
 
 
     function weatherSearch(searchValue) {  //this searchValue is a placeholder
@@ -38,9 +35,7 @@ $(document).ready(function () {
             url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=a468ca0d8bd9b0455127f58ae98ac8b8&units=imperial",
             success: function (data) {
                 console.log(data);
-
                 $("#current-weather").empty();
-
                 var cardTitle = $("<h4>").addClass("card-title").text(data.name + " (" + new Date().toLocaleDateString() + ")");
                 var card = $("<div>").addClass("today-card");
                 var icon = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
@@ -49,6 +44,9 @@ $(document).ready(function () {
                 var windSpeed = $("<p>").addClass("wind-speed").text("Wind Speed: " + data.wind.speed + " MPH");
                 var uvIndex = $("<p>").addClass("uv-index").text("UV Index: ");
                 var cardBody = $("<div>").addClass("card-body");
+
+                lat = data.coord.lat;
+                lon = data.coord.lon;
 
                 cardTitle.append(icon);
                 cardBody.append(cardTitle, temp, humidity, windSpeed, uvIndex);
@@ -59,29 +57,21 @@ $(document).ready(function () {
     }
 
 
+    function getUV() {
+        $.ajax({
+            type: "GET",
+            url: "https://api.openweathermap.org/data/2.5/uvi?appid=a468ca0d8bd9b0455127f58ae98ac8b8&lat=" + lat + "&lon=" + lon,
+            success: function (value) {
+                console.log(value);
+            },
+            error: function () {
+                console.log("text failed");
+            }
+        })
+    }
+    getUV();
 
-    // var lat = data.coord.lat; 
-    // var lon = data.coord.lon;
-
-
-    // function getUV() {  
-    //     $.ajax({
-    //         type: "GET",
-    //         url:"https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=a468ca0d8bd9b0455127f58ae98ac8b8",
-    //         // success: function(results) {
-    //         //     console.log(uvIndex);
-    //     })
-    // }
-    // getUV();
-
-    // // <p class="uv-index">UV Index: </p>
-
-    //     })
-    // }
-    //     getUV();
-
-
-
+    
     function getForecast(searchValue) {  //this searchValue is a placeholder
         $.ajax({
             type: "GET",
